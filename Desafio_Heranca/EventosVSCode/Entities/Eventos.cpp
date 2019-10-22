@@ -82,12 +82,66 @@ namespace Entities{
         cout<< "CAPACIDADES: " <<endl; 
     }
 
-//--------------------------Implementacao classe EventoAdulto -------------------------------------
+//--------------------------Implementacao classe-base EventoAdulto -------------------------------------
 
-EventoAdulto::EventoAdulto(){
+    EventoAdulto::EventoAdulto(){
 
-}
+    }
 
-EventoAdulto::EventoAdulto(int id,string nome,Adulto*responsavel,int capacidades[], int precos[],int horarios[], int duracao)
+    EventoAdulto::EventoAdulto(int id,string nome,Adulto*responsavel,int capacidades[], int precos[],int quota){
+        id_ = id;
+        this->nome_ = nome;
+        responsavel_ = responsavel;
+        capacidades_ = capacidades;
+        precos_ = precos;
+        quota_idoso_ = quota;
+    }
+
+//----------------------------- Implementacao da classe Boate ----------------------------------
+
+    Boate::Boate(){
+
+    }
+
+    Boate::Boate(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int horaInicio, int horaFim){
+        id_ = id;
+        this->nome_ = nome;
+        responsavel_ = responsavel;
+        capacidades_ = capacidades;
+        precos_ = precos;
+        horaInicio_ = horaInicio;
+        horaFim_ = horaFim;
+    }
+
+    void Boate::toString(){
+        cout << "ID : " << this->id_ << endl;
+        cout << "NOME : " << this->nome_ << endl;
+        cout << "-------- DADOS DO RESPONSAVEL ------------" << endl;
+        responsavel_->toString();
+        cout<< "CAPACIDADES: " <<endl; 
+    }
+
+//----------------------------- Implementacao da classe Show ----------------------------------
+    Show::Show(){
+
+    }
+
+    Show::Show(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int abertura, string artistas[]){
+        id_ = id;
+        this->nome_ = nome;
+        responsavel_ = responsavel;
+        capacidades_ = capacidades;
+        precos_ = precos;
+        abertura_ = abertura;
+        artistas_ = artistas;
+    }
+
+    void Show::toString(){
+        cout << "ID : " << this->id_ << endl;
+        cout << "NOME : " << this->nome_ << endl;
+        cout << "-------- DADOS DO RESPONSAVEL ------------" << endl;
+        responsavel_->toString();
+        cout<< "CAPACIDADES: " <<endl; 
+    }
 
 }

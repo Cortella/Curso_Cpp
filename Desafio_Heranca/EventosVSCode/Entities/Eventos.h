@@ -108,7 +108,7 @@ using namespace std;
             Boate();
 
             //Cria novo evento adulto boate
-            Boate(int id,string nome,Usuario *responsavel,int capacidades[], int precos[],int horaInicio, int horaFim);
+            Boate(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int horaInicio, int horaFim);
             
             //Sobresceve metodo toString e torna Boate uma classe instanciavel
             void toString() override;
@@ -127,7 +127,7 @@ using namespace std;
             Show();
 
             //Cria novo evento adulto boate
-            Show(int id,string nome,Usuario *responsavel,int capacidades[], int precos[],int abertura, string artistas[]);
+            Show(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int abertura, string artistas[]);
             
             //Sobresceve metodo toString e torna Show uma classe instanciavel
             void toString() override;
