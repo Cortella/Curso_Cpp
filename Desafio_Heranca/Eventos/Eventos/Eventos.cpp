@@ -2,10 +2,39 @@
 //
 
 #include <iostream>
+#include <list>
+#include <stdlib.h>
+#include <string>
+#include <fstream>
 
+using std::cout;
+using std::cin;
+using std::string;
+using std::endl;
+using std::list;
+using std::ifstream;
+using std::ofstream;
+
+void le_entrada(string usuariosFile, string eventosFile, list<string> *usuarios,list<string>*eventos) {
+	ifstream streamEntrada(usuariosFile);
+	if (streamEntrada.is_open()) {
+		while (!streamEntrada.eof()) {
+			string atual;
+
+			usuarios->insert()
+		}
+	}
+	else {
+		cout << "Erro ao abrir arquivo!" << endl;
+	}
+	
+
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+	string arqUsuario = "usuarios.txt";
+	string arqEventos = "eventos.txt";
+	le_entrada(arqUsuario,arqEventos)
 }
 
 // Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração
