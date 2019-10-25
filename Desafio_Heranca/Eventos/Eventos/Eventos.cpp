@@ -19,7 +19,7 @@ void le_entrada(string usuariosFile, string eventosFile, list<string> *usuarios,
 	ifstream streamEntrada(usuariosFile);
 	if (streamEntrada.is_open()) {
 		while (!streamEntrada.eof()) {
-			string atual;
+			char[atual]
 
 			usuarios->insert()
 		}

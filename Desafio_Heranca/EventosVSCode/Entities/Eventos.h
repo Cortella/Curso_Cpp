@@ -49,6 +49,7 @@ using namespace std;
 
         class TeatroFantoche : public EventoInfantil{
             
+            public:
             //Construtor Padrao
             TeatroFantoche();
 

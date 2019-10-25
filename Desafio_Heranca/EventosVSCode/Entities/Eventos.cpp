@@ -5,9 +5,9 @@ namespace Entities{
     //--------------------------Implementacao classe-base Evento -------------------------------------
 
     Evento::Evento(){
-        this->id_ = NULL;
+        this->id_ = 0;
         this->nome_ = "";
-        this->precos_ = NULL;
+        this->precos_ = 0;
         responsavel_ = new Adulto(); 
     }
 
@@ -36,7 +36,12 @@ namespace Entities{
     //--------------------------Implementacao classe TeatroFantoche -------------------------------------
 
     TeatroFantoche::TeatroFantoche(){
- 
+        this->id_ = 0;
+        this->nome_ = "Padrao";
+        responsavel_ = nullptr;
+        capacidades_ = new int[10];
+        precos_ = new int[10];
+        horarios_ = new int[10];
     }
 
      TeatroFantoche::TeatroFantoche(int id,string nome,Adulto *responsavel,int capacidades[],int precos[],int horarios[]){
