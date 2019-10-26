@@ -58,6 +58,7 @@ namespace Entities{
         Crianca *dependentes_;
         int capacidade_;
         int numDependentes_;
+        int numEventos_;
 
         public:
         
@@ -84,6 +85,9 @@ namespace Entities{
 
         //Torna Adulto uma classe instanciavel
         void toString() override;
+
+        //Adiciona um evento que esta sob responsabilidade de determinado adulto
+        void addEvento();   
 
         //Desaloca Memoria alocada para Adulto
         ~Adulto();

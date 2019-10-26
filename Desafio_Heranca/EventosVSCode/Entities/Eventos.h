@@ -4,6 +4,7 @@
 #include <iostream>
 #include<string>
 #include "Usuario.h"
+#include <vector>
 
 using namespace std;
 
@@ -20,8 +21,25 @@ using namespace std;
             //Cria novo evento
             Evento(int id,string nome,Adulto *responsavel,int capacidades[],int precos[]);
 
+            //retorna id do evento
+            int getId();
+            
+            // retorna nome do evento
+            string getNome();
+
+            //retorna nome do Adulto responsavel
+            string getNomeResponsavel();
+            
+            //retorna ponteiro para vetor com capacidades
+            int * getCapacidades();
+
+            //retorna ponteiro para vetor de precos
+            int * getPrecos();
             //Escreve na tela os dados do evento
             virtual void toString() = 0;
+
+            //Destrutor padrao
+            ~Evento();
 
             protected:
             int id_;
@@ -43,6 +61,9 @@ using namespace std;
 
             //Cria evento infantil
             EventoInfantil(int id,string nome,Adulto *responsavel,int capacidades[], int precos[]);
+
+            //Destrutor padrao
+            ~EventoInfantil();
         };
 
         //----------------------------- Classe TeatroFantoche -----------------------------------
@@ -56,10 +77,15 @@ using namespace std;
             //Cria novo Teatro de fantoches
             TeatroFantoche(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int horarios[]);
 
+            //Retorna ponteiro para vetor de hoarios
+            int* getHorarios();
+
             //@override
             //Sobrescreve funcao toString e torna funcao TeatroFantoche instanciavel
             void toString() override;
 
+            //Destrutor Padrao
+            ~TeatroFantoche();
             private:
             int *horarios_;
         };
@@ -75,9 +101,17 @@ using namespace std;
             //Cria novo evento de cinema
             Cinema(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int horarios[], int duracao);
 
+            //Retorna ponteira para vetor de horarios
+            int* getHorarios();
+
+            //retorna duracao
+            int getDuracao(); 
             //@override
             //Sobresceve metodo toString e tona Cinema uma classe instanciavel
             void toString() override;
+
+            //Destrutor 
+            ~Cinema();
 
             private:
 
@@ -96,6 +130,12 @@ using namespace std;
             //Cria novo evento Adulto
             EventoAdulto(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int quota_idoso);
 
+            //return quota_idoso
+
+            int getQuotaIdoso();
+            //Destrutor
+            ~EventoAdulto();
+
             private:
             int quota_idoso_;
         };
@@ -111,8 +151,17 @@ using namespace std;
             //Cria novo evento adulto boate
             Boate(int id,string nome,Adulto *responsavel,int capacidades[], int precos[],int horaInicio, int horaFim);
             
+            //retorna hora de inicio
+            int getInicio();
+
+            //retorna hora do fim
+            int getFim();
+            
             //Sobresceve metodo toString e torna Boate uma classe instanciavel
             void toString() override;
+
+            //Destrutor
+            ~Boate();
 
             private:
             int horaInicio_;
@@ -133,6 +182,11 @@ using namespace std;
             //Sobresceve metodo toString e torna Show uma classe instanciavel
             void toString() override;
             
+            //Retorna ponteiro para vetor de artistas
+            string* getArtistas();
+            //Destrutor
+            ~Show();
+
             private:
             int abertura_;
             string *artistas_;

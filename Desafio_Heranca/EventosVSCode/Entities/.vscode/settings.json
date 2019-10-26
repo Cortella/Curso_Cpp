@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "xstring": "cpp",
         "xlocale": "cpp",
-        "xlocnum": "cpp"
+        "xlocnum": "cpp",
+        "vector": "cpp"
     }
 }

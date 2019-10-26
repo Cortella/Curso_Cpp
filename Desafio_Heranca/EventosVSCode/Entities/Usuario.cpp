@@ -3,10 +3,7 @@
 namespace Entities{
 
     Usuario::Usuario(){
-        id_ = 0;
-        nome_ = "";
-        idade_ = 0;
-        saldo_ = 0;
+        
     }
 
     Usuario::Usuario(int id,string nome,int idade, float saldo){
@@ -72,19 +69,22 @@ namespace Entities{
     //Classe Adulto
 
      Adulto::Adulto() : Usuario(){
-        dependentes_ = new Crianca[10];
+        dependentes_ = new Crianca[capacidade_];
+        numEventos_ = 0;
                         
     }
     Adulto::Adulto(int id,string nome,int idade,float saldo) : Usuario(id,nome,idade,saldo){
         capacidade_ = 1;
         numDependentes_ =0;
         dependentes_ = new Crianca[capacidade_];
+        numEventos_ = 0;
         
     }
 
     Adulto::Adulto(int id,string nome,int idade,float saldo, Crianca dependentes[], int numDependentes) : Usuario(id,nome,idade,saldo){
         dependentes_ = dependentes;
         numDependentes_ =numDependentes;
+        numEventos_ = 0;
     }
 
     void Adulto::addDependente(Crianca *c) {
@@ -134,6 +134,10 @@ namespace Entities{
         cout<< "Saldo : " << this->getSaldo() <<endl;
     }
 
+    void Adulto::addEvento(){
+        numEventos_++;
+    }
+    
     Adulto::~Adulto(){
         delete [] dependentes_;
         delete this;
