@@ -1,15 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
-#include "Usuario.h"
-#include "Eventos.h"
 
 using namespace std;
-using namespace Entities;
 
 int main(){
-
+    string c="12";
+    
 
     system("pause");
     return 0;
-
 }

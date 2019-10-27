@@ -208,7 +208,7 @@ namespace Entities{
         cout<< "Começa : " << getInicio() << " | Termina: " << getFim() <<endl; 
     }
 
-    ~Boate::Boate(){
+    Boate::~Boate(){
         delete [] capacidades_;
         delete [] precos_;
         delete this;
@@ -229,7 +229,7 @@ namespace Entities{
         artistas_ = artistas;
     }
 
-    Show::string* getArtistas(){
+    string* Show::getArtistas(){
         return artistas_;
     }
 
@@ -244,9 +244,9 @@ namespace Entities{
         for(int i=0;i<(sizeof(artistas_))/artistas_[i].size();i++){
             cout<< " Artista: " << artistas_[i]  << "|Valor : "<< precos_[i]<< endl;
         }
-        cout<< "Qouta Idoso: " << getQuotaIdoso() <<endl;
+            cout<< "Qouta Idoso: " << getQuotaIdoso() <<endl;
+        }
     }
-
     Show::~Show(){
         delete [] capacidades_;
         delete [] precos_;

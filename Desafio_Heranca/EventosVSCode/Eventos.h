@@ -184,6 +184,7 @@ using namespace std;
             
             //Retorna ponteiro para vetor de artistas
             string* getArtistas();
+            
             //Destrutor
             ~Show();
 
